@@ -10,6 +10,7 @@ function SignupForm(props){
     const [password, setPassword] = useState("")
     const [name, setName] = useState("")
     const [phoneNumber, setPhoneNUmber] = useState("")
+    const [clubCode, setClubCode] = useState("")
     const navigate = useNavigate();
 
 
@@ -22,6 +23,8 @@ function SignupForm(props){
 
     async function handleSubmit(e){
         e.preventDefault();
+        
+        
         const nullError = handleNullError();                       
         if(!nullError){
             const dupError = await handleDuplicate(); 
@@ -95,6 +98,7 @@ function SignupForm(props){
             <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="border border-yellow-500 bg-black text-white px-4 py-2 m-2 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"/>
             <input type="text" placeholder="Phone Number" value={phoneNumber} onChange={(e) => setPhoneNUmber(e.target.value)} className="border border-yellow-500 bg-black text-white px-4 py-2 m-2 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"/>
             <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="border border-yellow-500 bg-black text-white px-4 py-2 m-2 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"/>
+            <input type="text" placeholder="Enter your club's code" value={clubCode} onChange={(e) => setClubCode(e.target.value)} className="border border-yellow-500 bg-black text-white px-4 py-2 m-2 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"/>
             <button type='submit' onClick={handleSubmit} className = "bg-gradient-to-r from-amber-200 to-yellow-400 hover:bg-gradient-to-r hover:from-amber-400 hover:to-yellow-200 text-black font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-50"> Sign Up</button>
                 
             </form>

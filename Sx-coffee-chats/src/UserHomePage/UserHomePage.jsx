@@ -44,7 +44,7 @@ function UserHomePage(props){
     return(
         <div className="bg-gradient-to-r from-gray-700 to-black">
             <div className="fixed top-0 flex flex-col justify-center items-center w-full z-50">
-                <h1 className="text-yellow-400 text-6xl font-serif bg-gradient-to-r from-amber-200 to-yellow-400 inline-block text-transparent bg-clip-text">{loggedInUser.name} Welcome to SX coffee Chats!</h1>
+                <h1 className="text-yellow-400 text-6xl font-serif bg-gradient-to-r from-amber-200 to-yellow-400 inline-block text-transparent bg-clip-text">{loggedInUser.name} Welcome to GT coffee Chats!</h1>
                 {message1 && <h2 className="text-yellow-400 text-2xl font-serif bg-gradient-to-r from-amber-200 to-yellow-400 inline-block text-transparent bg-clip-text">You are currently signed up for a Coffee Chat this week</h2>}
                 {message2 && <h2 className="text-yellow-400 text-2xl font-serif bg-gradient-to-r from-amber-200 to-yellow-400 inline-block text-transparent bg-clip-text">You are currently not signed up for a Coffee Chat this week</h2>}
                 {hasPartner && <h2 className="text-yellow-400 text-2xl font-serif bg-gradient-to-r from-amber-200 to-yellow-400 inline-block text-transparent bg-clip-text">Your partner is currently {loggedInUser.partner.name}</h2>}

@@ -14,9 +14,11 @@ const cron = require('node-cron');
 const app = express()
 app.use(express.json())
 app.use(cors())
+require('dotenv').config();
+const mongoPassword = process.env.MONGO_PASSWORD;
 
-mongoose.connect("mongodb+srv://samarthtewari:qTWK0B6RPwaZpYoF@devcluster.a1z3qsb.mongodb.net/?retryWrites=true&w=majority&appName=DevCluster")
-//mongoose.connect("mongodb://localhost:27017/SxCoffeeChats")
+mongoose.connect(`mongodb+srv://samarthtewari:${mongoPassword}@devcluster.a1z3qsb.mongodb.net/?retryWrites=true&w=majority&appName=DevCluster`)
+
 async function hashPassword(password) { // returns hashed password I assume
     const saltRounds = 10;
     return await bcrypt.hash(password, saltRounds);
